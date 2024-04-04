@@ -206,7 +206,7 @@ nav img {
     font-size: 128px;
 
     @media (max-width : 600px) {
-        font-size: 60px;
+        font-size: 40px;
     }
 }
 
@@ -353,11 +353,33 @@ nav img {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+
+    @media (max-width:600px) {
+        min-height: 95vh;
+        flex-direction: column;
+        justify-content: normal;
+        align-items: normal;
+        padding: 5% 0 5% 10%;
+    }
 }
 
 .Projects h2 {
     font-size: 50px;
     z-index: 10;
+
+    @media (max-width:600px) {
+        font-size: 30px;
+    }
+
+}
+
+.Projects .project-para {
+    @media(max-width:600px) {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-direction: column;
+    }
 }
 
 .Projects .overlay {
@@ -373,6 +395,10 @@ nav img {
 .Projects:hover .overlay {
     background: #FF9831;
     top: 0;
+
+    @media(max-width:600px) {
+        background: transparent;
+    }
 }
 
 .Projects div p {
@@ -383,6 +409,23 @@ nav img {
 }
 
 /* image box */
+
+.project-image-box {
+    display: none;
+
+    @media (max-width:600px) {
+        display: block;
+    }
+}
+
+.project-image-box img {
+    @media (max-width:600px) {
+        border-radius: 15px;
+        height: 70vh;
+        width: 80vw;
+        object-fit: cover;
+    }
+}
 
 .image-box {
     width: 358px;
@@ -515,12 +558,16 @@ nav img {
     width: 100%;
     background: #EFEAE3;
     padding: 8vw 2vw;
+
+    @media(max-width:600px) {
+        height: 52vh;
+        background: #EFEAE3;
+    }
 }
 
 .swiper {
     width: 100%;
     height: 100%;
-
 }
 
 .swiper-slide {
@@ -531,6 +578,15 @@ nav img {
     font-size: 15px;
     padding: 5px 40px 5px 25px;
     border-left: 1px solid #9e9090;
+
+    @media(max-width:600px) {
+        font-size: 10px;
+        line-height: 17px;
+        padding: 5px 0 0 15px ;
+        border-left: 1px solid #9e9090;
+        width: 100%;
+    }
+
 }
 
 .swiper-slide img {
@@ -539,6 +595,10 @@ nav img {
 
 .swiper-slide {
     width: 30%;
+
+    @media(max-width:600px) {
+        width: 60%;
+    }
 }
 
 /* Sixth section */
@@ -620,7 +680,7 @@ nav img {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
 
     @media (max-width:600px) {
         font-size: 40px;

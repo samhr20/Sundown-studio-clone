@@ -12,21 +12,30 @@ let projects = document.querySelectorAll(".Projects");
 let imageBox = document.querySelector(".image-box");
 
 
-projectsBox.addEventListener("mouseenter", () => {
-    imageBox.style.display = "block"
-});
+function mobilewidth(){
+    return window.innerWidth <= 600
+}
 
-projectsBox.addEventListener("mouseleave", () => {
-    imageBox.style.display = "none"
-});
+if(!mobilewidth()){
 
+    projectsBox.addEventListener("mouseenter", () => {
+        imageBox.style.display = "block"
+    });
+    
+    projectsBox.addEventListener("mouseleave", () => {
+        imageBox.style.display = "none"
+    });
+    
+    
+    projects.forEach(function (e) {
+        e.addEventListener("mouseenter", function () {
+            let image = e.getAttribute("data-image");
+            imageBox.style.backgroundImage = `url(${image})`
+        })
+    });
 
-projects.forEach(function (e) {
-    e.addEventListener("mouseenter", function () {
-        let image = e.getAttribute("data-image");
-        imageBox.style.backgroundImage = `url(${image})`
-    })
-});
+}
+
 
 
 // banner
