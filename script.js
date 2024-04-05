@@ -97,3 +97,40 @@ let loader = document.getElementById("loader");
 setTimeout(()=>{
     loader.style.top = "-100%";
 },4000)
+
+
+// menu button
+let menu = document.querySelector("nav h3");
+let menuPopup = document.querySelector(".menu-popup");
+let closebtn = document.querySelector(".menu-close-btn");
+let overlay = document.querySelector(".overlay-2");
+
+let temp = 0 ;
+
+menu.addEventListener('click' , ()=>{
+    if(temp === 0){
+        menuPopup.style.top = "0";
+        overlay.style.display = 'block'; 
+        temp = 1;
+        window.addEventListener('scroll', closeMenuOnScroll);
+    } 
+});
+ 
+closebtn.addEventListener('click' , ()=>{
+    if(temp === 1 ){
+        menuPopup.style.top ="-100%";
+        overlay.style.display = 'none';
+        temp = 0 ;
+
+        window.removeEventListener('scroll', closeMenuOnScroll);
+    }
+});
+
+
+function closeMenuOnScroll() {
+    menuPopup.style.top = "-100%";
+    overlay.style.display = 'none';
+    temp = 0;
+
+    window.removeEventListener('scroll', closeMenuOnScroll);
+}
